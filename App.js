@@ -1,29 +1,18 @@
-import { StatusBar } from "expo-status-bar";
-import { FlatList, StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import Card from "./util/Card";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { StyleSheet } from "react-native";
+import Home from "./View/Home";
 
 export default function App() {
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <StatusBar style="auto" />
-        <FlatList
-          data={[{ key: "a" }, { key: "b" }]}
-          style={{
-            width: "100%",
-            height: "100%",
-            marginTop: 20,
-            backgroundColor: "#a3f"
-          }}
-          renderItem={({ item }) => <Card data={item.key} />}
-        />
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Camy" component={Home} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
+const Stack = createNativeStackNavigator();
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
