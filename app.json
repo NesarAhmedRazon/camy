@@ -10,10 +10,18 @@
       [
         "expo-camera",
         {
-          "permissions": ["CAMERA", "AUDIO_RECORDING"],
-          "cameraRoll": true,
-          "cameraRollAccessLevel": "read",
-          "cameraPermission": "Allow Camy to access your camera?"
+          "permissions": [
+            "CAMERA",
+            "AUDIO_RECORDING"
+          ],
+          "cameraPermission": "Allow Camy to access your camera?",
+          "microphonePermission": "Allow Camy to access your microphone?",
+          "locationAlwaysAndWhenInUsePermission": "Allow Camy to access this device's location?",
+          "locationAlwaysPermission": "Allow Camy to access this device's location?",
+          "photoPermission": "Allow Camy to access your photos?",
+          "storagePermission": "Allow Camy to access your storage?",
+          "notificationPermission": "Allow Camy to send notifications?",
+          "isAccessMediaLocationEnabled": true
         }
       ]
     ],
@@ -22,7 +30,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -30,10 +40,20 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.grimslab.camy"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "60bef4f5-315a-4ff3-9480-4ccefcbc4462"
+      }
     }
   }
 }
